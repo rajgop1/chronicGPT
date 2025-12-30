@@ -1,0 +1,169 @@
+/* THE SCROLL TRACK (Stage) */
+.sj-stage {
+  position: relative;
+  width: 100%;
+  height: 900vh !important; 
+}
+
+
+/* THE STICKY CONTAINER */
+.sj-container {
+  position: sticky;
+  top: 22vh; /* Where the box stops */
+  /* height: 700px; Fixed height of the viewing window */
+    height: calc(100vh - 15vh);
+  width: 98%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 60px;
+  padding: 60px;
+  padding-top: 40px;
+  color: #121212;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  
+  /* Disable internal scroll to allow JS to control it */
+  overflow-y: hidden; 
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* Hide scrollbar for the internal container */
+.sj-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header Adjustments */
+.sj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.sj-header h2 {
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.sj-header p {
+  max-width: 294px;
+  font-family: Raleway;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Ensure the cards and wrappers don't break the layout */
+.tb-wrapper {
+  margin-top: 80px;
+  padding: 40px;
+  background: linear-gradient(180deg, #fee3bd, #fff7ea);
+  background:#121212;
+  border-radius: 32px;
+}
+
+.tc-wrapper {
+  padding: 100px 0;
+  background: #ffffff;
+  
+}
+.tb-header{
+  display: flex;
+  justify-content:space-around;
+  gap: 40px;
+}
+.tb-header h2{
+  width: 100%;
+}
+
+/* Card Hover Effects (Keep your existing code) */
+.tb-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 32px;
+
+  height: 400px;          /* 👈 Fixed height */
+  box-sizing: border-box;
+}
+
+.tb-left {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+}
+
+.tb-right {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tb-right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sj-container {
+    top: 80px;
+    height: calc(100vh - 120px);
+    padding: 30px;
+  }
+  .sj-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (min-width:1920px) {
+   .sj-stage {
+    width: 1472px;
+    margin: 0 auto;
+   }
+}
+/* THE SCROLL TRACK (Stage) */
+.sj-stage {
+  height: 800vh; 
+  position: relative;
+  width: 100%;
+}
+
+/* THE STICKY CONTAINER */
+.sj-container {
+  position: sticky;
+  top: 22vh; /* UPDATED: Changed from 180px */
+  /* height: 720px; Added 30px to height to fill the gap created by moving it up */
+  width: 98%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 60px;
+  padding: 60px;
+  padding-top: 40px;
+  color: #121212;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  overflow-y: hidden; 
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* Rest of your CSS remains the same... */
+.sj-container::-webkit-scrollbar {
+  display: none;
+}

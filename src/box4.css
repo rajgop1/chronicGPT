@@ -1,0 +1,23 @@
+
+.box4-title-section {
+  padding: 80px 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.box4-title {
+  font-size: 38px;
+  text-transform: uppercase;
+}
+
+.box4-subtitle {
+  font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .box4-inner {
+    border: 1px solid #3a3a3a;
+    height: 30vh;
+  }
+}

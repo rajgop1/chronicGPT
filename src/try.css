@@ -1,0 +1,186 @@
+html,
+body {
+  font-family: Raleway, sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.ontainer {
+  display: flex;
+  width: 96%;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+/* 🔥 BORDER MASK (instead of overflow hidden) */
+.ontainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #555;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 20;              /* stays above sticky layers */
+}
+
+/* ICON IMAGE */
+.imges {
+  width: 90px;
+  height: 90px;
+}
+
+/* ================= LEFT ================= */
+.left {
+  width: 44%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= STICKY SECTIONS ================= */
+.section {
+  height: 75vh;
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: white;
+  z-index: var(--z);
+}
+
+/* Internal dividers */
+.section:not(:last-child) {
+  border-bottom: 1px solid #555;
+}
+.section:not(:first-child){
+   border-top:1px solid #555
+}
+.section:last-child{
+  border-top:1px solid #555;
+}
+
+/* stacking order */
+.r1 { --z: 1; }
+.r2 { --z: 2; }
+.r3 { --z: 3; }
+.r4 { --z: 4; }
+.r5 { --z: 5; }
+.r6 { --z: 6; }
+
+/* ================= CONTENT ================= */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 32px;
+  margin-top: 40px;
+}
+
+.section h3 {
+  color: #121212;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 35px;
+  margin: 0;
+}
+
+.section h6 {
+  margin-left: 32px;
+  margin-top: auto;
+   margin-top: 45%;
+  margin-bottom: 40px;
+  color: #121212;
+  font-size: 16px;
+  width: 90%;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/* ================= RIGHT ================= */
+.right {
+  width: 56%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Vertical separator */
+.right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: #555;
+}
+
+/* ================= IMAGES ================= */
+.right .img {
+  height: 75vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+/* Desktop images */
+.img1 { background-image: url("yd1.png"); }
+.img2 { background-image: url("yd2.png"); }
+.img3 { background-image: url("yd3.png"); }
+.img4 { background-image: url("yd4.png"); }
+.img5 { background-image: url("yd5.png"); }
+.img6 { background-image: url("yd6.png"); }
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .ontainer {
+    flex-direction: column;
+  }
+
+  .ontainer::before {
+    border-radius: 16px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: auto;
+  }
+
+  .section {
+    height: 75vh;
+  }
+
+  .section h3,
+  .section h6 {
+    width: 90%;
+    margin-left: 18px;
+    font-size: 18px;
+  }
+
+  .top-row {
+    margin-left: 16px;
+    margin-top: 30px;
+  }
+
+  .right .img {
+    height: 75vh;
+    background-size: cover;
+  }
+
+  .img1 { background-image: url("i1.png"); }
+  .img2 { background-image: url("i2.png"); }
+  .img3 { background-image: url("i3.png"); }
+  .img4 { background-image: url("i4.png"); }
+  .img5 { background-image: url("i5.png"); }
+  .img6 { background-image: url("i1.png"); }
+}

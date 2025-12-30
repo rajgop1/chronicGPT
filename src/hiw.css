@@ -1,0 +1,173 @@
+.hiw-wrapper {
+  height: 300vh; /* Extra height for more scroll room */
+  background: #fff;
+  position: relative;
+}
+
+.hiw-container {
+  position: sticky;
+  top: 0;
+  height: 80vh;
+  display: flex;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  gap: 50px;
+}
+
+/* Left Column Styling */
+.hiw-lft-column {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  padding-bottom: 20px;
+}
+.hiw-heade h2 {
+color: #121212;
+font-family: Raleway;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: 0.8;
+}
+.sub-head {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #121212;
+  max-width: 400px;
+}
+
+.hiw-progress-section {
+  width: 120px;
+}
+
+.progress-text {
+  color: #121212;
+font-family: Roboto;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+line-height: 36px; /* 100% */
+}
+
+.progress-text .total {
+  color: #ccc;
+}
+
+.progress-bar-bg {
+  height: 3px;
+  background: #eee;
+  width: 100%;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #000;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Right Column Styling (Cards) */
+.hiw-rgt-column {
+  width: 60%;
+  position: relative;
+  height: 80vh;
+  align-self: center;
+}
+
+.cards-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 64px; */
+  box-sizing: border-box;
+}
+
+.hiw-card{
+  margin-top: 32px;
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 86%;
+  height: 80%;
+  background: #F1F1F1; /* Light grey background from screenshot */
+  border-radius: 50px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding-bottom:15px;
+}
+
+.card-image {
+  width: 100%;
+  height: 60%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-num {
+ color: #121212;
+font-family: Raleway;
+font-size: 28px;
+font-style: normal;
+font-weight: 300;
+line-height: 36px; /* 100% */
+}
+
+.card-content h3 {
+ color: #121212;
+font-family: Raleway;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 0px;
+}
+
+.card-content p {
+ color: #121212;
+font-family: Raleway;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 1.3;
+}
+
+/* Peeking effect: When a card is coming from bottom, it's slightly visible */
+.hiw-card.active {
+  transform: translateY(0) !important;
+}
+
+
+
+
+
+
+
+.progress-lines {
+  display: flex;
+  gap: 8px;        /* 20px gap between segments */
+}
+
+.progress-line {
+  width: 15px;     /* 👈 small line width */
+  height: 3px;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+}
+
+.progress-line.active {
+  background: #000;
+  width: 60px;     /* 👈 slightly longer when active */
+  transform: scaleY(1.2);
+}

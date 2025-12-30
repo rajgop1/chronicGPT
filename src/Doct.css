@@ -1,0 +1,22 @@
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-text p {
+    margin: 0 auto;
+  }
+
+  .hero-info {
+    position: static;
+    margin-top: 16px;
+  }
+
+  .hero-badge {
+    position: static;
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,20 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px; /* space between logo & text */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center; /* makes text centered */
+  animation: fadeIn 1s ease-in-out;
+  background-color: black;
+  color: white;
+}
+.rotating-logo {
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite, scaleUp 1s ease-in-out;
+}

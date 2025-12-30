@@ -1,0 +1,135 @@
+/* =========================
+   BASE HEADER (DARK ONLY)
+========================= */
+:root {
+  --header-height: 72px;
+  --header-padding-x: 60px;
+  --logo-height: 40px;
+  --nav-font-size: 16px;
+}
+
+
+.global-header {
+  position: sticky;
+  top: 0;
+  z-index: 99999999;
+  height: var(--header-height);
+  padding: 5px var(--header-padding-x);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #121212;
+  color: #ffffff;
+border-bottom: 1px solid transparent;
+border-image: linear-gradient(
+  to right,
+  transparent 20%,
+  #ffffffa8 50%,
+  transparent 80%
+) 1;
+}
+
+
+/* REMOVE invert effect visually */
+.global-header.invert {
+  background: #121212;
+  color: #ffffff;
+}
+
+/* Remove background at 80vh */
+.global-header.no-background {
+  background: none;
+  background-color: transparent;
+}
+
+/* NAV */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.global-header.no-border {
+  border-bottom: none !important;
+  border-image: none !important;
+}
+
+.nav-item {
+  font-size: var(--nav-font-size);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+
+.nav-item:hover {
+  opacity: 0.7;
+}
+
+/* LOGO */
+.logos {
+  height: var(--logo-height);
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 28px;
+  display: none;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links { display: none; }
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: absolute;
+  top: 72px;
+  left: 16px;
+  background: #121212;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* GRADIENT STAR */
+.gradient-text {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1; /* normalize text height */
+}
+
+.nav-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+.nav-icon {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-1px); /* tiny optical alignment */
+}
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links { display: none; }
+}

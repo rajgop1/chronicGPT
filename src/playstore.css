@@ -1,0 +1,9 @@
+.phone {
+  width: 100%;
+  display: block;      /* removes inline image gap */
+  background: none;
+  background-color: black;
+  z-index: 10000;
+}
+
+/* 1px divider line */

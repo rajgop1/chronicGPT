@@ -1,0 +1,193 @@
+/* ================================
+   BOX10 WRAPPER
+================================ */
+.b10-container {
+  background-color: #F1F1F1;
+  color: #121212;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.box10 {
+  padding: 25px;
+  padding-bottom: 50px;
+  background: #F1F1F1;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  border-radius: 60px;
+  overflow-x: hidden;             /* 👈 prevent horizontal scrollbar */
+}
+
+/* ================================
+   HEADER
+================================ */
+.box10-header {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.box10-header h2 {
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 600;
+  color: #121212;
+}
+
+.box10-header p {
+  font-size: 15px;
+  color: #121212;
+  max-width: 650px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+/* ================================
+   CARDS CONTAINER
+================================ */
+.box10-cards {
+  display: flex;
+  gap: 24px;
+  padding-bottom: 15px;
+  position: sticky; 
+  top: 29%;
+  margin-top: -120px;
+  will-change: transform;
+}
+
+/* ================================
+   CARD
+================================ */
+.box10-card {
+  padding: 13px;
+  width: 230px;
+  border-radius: 30px;
+  background: #fff;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.box10-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.box10-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box10-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-top: 10px;
+}
+
+.box10-content p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* ================================
+   METRICS
+================================ */
+.metrics-photo-layout {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.metric-pill {
+  width: 260px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.metric-pill h4 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metric-pill h4 span,
+.metric-pill h4 small {
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+.metric-pill p {
+  font-size: 14px;
+  margin-top: 6px;
+  line-height: 1;
+}
+
+.pill1 { background-color: #BFE8D8; color: #116544; }
+.pill2 { background-color: #CDD1ED; color: #28327B; }
+.pill3 { background-color: #FFE1C5; color: #724317; }
+.pill4 { background-color: #D0E8FF; color: #14426E; }
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (min-width: 1920px) {
+  .b10-container {
+    width: 98%;
+    margin: 0 auto;
+  }
+.box10{
+  margin: 0 auto;
+}
+}
+
+@media (max-width: 768px) {
+  .box10-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box10-header h2 {
+    font-size: 26px;
+  }
+
+  .box10-cards {
+    top: 80px;
+  }
+
+  .box10-card {
+    width: 240px;
+  }
+
+  .metrics-photo-layout {
+    gap: 40px;
+    padding-top: 60px;
+  }
+}
+
+/* ================================
+   LARGE DESKTOP
+================================ */
+
+

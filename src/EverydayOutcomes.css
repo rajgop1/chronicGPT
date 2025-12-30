@@ -1,0 +1,241 @@
+/* ================================
+   BASE
+================================ */
+.edo-container {
+  background-color: white;
+  width: 96%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  font-family: Inter, sans-serif;
+   border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.eo-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ================================
+   CARD
+================================ */
+.eo-card {
+  width: 100%;
+  background: linear-gradient(180deg, #f6f2ec, #f7d9b0);
+  border-radius: 32px;
+  padding: clamp(24px, 4vw, 36px);
+  box-sizing: border-box;
+}
+
+.eo-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+.tc-wrapper{
+   border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+/* ================================
+   CONTENT
+================================ */
+.eo-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+}
+
+.eo-image {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.eo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eo-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eo-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.eo-row:last-child {
+  border-bottom: none;
+}
+
+.eo-value {
+  font-size: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eo-arrow {
+  font-size: 26px;
+}
+
+.eo-suffix {
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 6px;
+  opacity: 0.8;
+}
+
+.eo-label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ================================
+   TRUST SECTION
+================================ */
+.eo-trust {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.eo-trust-text {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.eo-trust-items {
+  display: flex;
+  gap: 32px;
+}
+
+.eo-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.eo-trust-icon {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Divider */
+.eo-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 24px 0;
+}
+
+/* ================================
+   CTA SECTION
+================================ */
+.eo-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.eo-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #7f5cff, #ff8bd8);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.eo-cta-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.eo-cta-sub {
+  font-size: 14px;
+  color: #555;
+}
+
+.eo-input-box {
+  max-width: 320px;
+  width: 100%;
+}
+
+.eo-input-box label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.eo-input-box input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #eee;
+  font-size: 14px;
+  outline: none;
+}
+
+.eo-input-box small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #777;
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 900px) {
+  .eo-content {
+    grid-template-columns: 1fr;
+  }
+
+  .eo-row {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .eo-value {
+    font-size: 26px;
+  }
+
+  .eo-trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .eo-trust-items {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .eo-cta {
+    flex-direction: column;
+  }
+
+  .eo-input-box {
+    max-width: 100%;
+  }
+}

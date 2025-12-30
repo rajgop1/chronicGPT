@@ -1,0 +1,253 @@
+/* =========================
+   ROOT & WRAPPER
+========================= */
+.timed-reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.timed-reveal.show {
+  opacity: 1;
+}
+
+/* Fade up */
+.timed-reveal.fade {
+  transform: translateY(25px);
+}
+
+.timed-reveal.fade.show {
+  transform: translateY(0);
+}
+
+/* Zoom */
+.timed-reveal.zoom {
+  transform: scale(0.85);
+}
+
+.timed-reveal.zoom.show {
+  transform: scale(1);
+}
+
+
+.fnav-container {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  overflow-y: hidden;
+  border-bottom: 1px solid transparent;
+border-image: linear-gradient(
+  to right,
+  transparent 20%,
+  #ffffffa8 50%,
+  transparent 80%
+) 1;
+}
+.rh{
+
+}
+/* =========================
+   STICKY HEADER 
+========================= */
+.sticky-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white; /* Your requested color */
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  height: 12vh;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.active-home {
+  font-weight: 700;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 4px;
+}
+
+.divline {
+  width: 95%;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.hero-inner {
+  /* background-color: green; */
+  width: 95%;
+  margin: 0 auto;
+  /* max-width: 1300px; */
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  height: 65% ;
+  /* border: 2px solid orange; */
+  border-bottom: 1px solid transparent;
+border-image: linear-gradient(
+  to right,
+  transparent 20%,
+  #ffffffa8 50%,
+  transparent 80%
+) 1;
+  margin-top: -5%;
+  overflow: hidden;
+}
+
+/* LEFT */
+.hero-text{
+  margin-top: -10%;
+  margin-left: 15%;
+  width: 90%;
+}
+.hero-text p {
+  font-size: 33px;
+  opacity: 0.7;
+  max-width: 680px;
+}
+.ny{
+  color: #FFF;
+text-align: center;
+font-family: Raleway;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+margin-top:2.5%;
+line-height: 1;
+}
+/* RIGHT */
+.hero-visual {
+  position: relative;
+  height: 425px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-doctor{
+  width: 100%;
+  transform: scaley(0.7);
+  z-index: 2;
+}
+
+.hero-info {
+  position: absolute;
+  left: 60%;
+  top: 35%;
+  color: #FFF;
+font-family: Raleway;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+  z-index: 3;
+  line-height: 2%;
+}
+.hero-info .doct{
+  font-size: 10px;
+}
+
+.hero-badge{
+  position: absolute;
+  margin-left: 70%;
+  z-index: 3;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width:2000px) {
+  .hero-visual{
+    height: 85vh;
+    /* margin-top: 0px; */
+  }
+  .hero-doctor{
+    height: 105%;
+    width: 75%;
+  }
+  .hero-inner{
+    height: 75%;
+  }
+  .hero-text{
+margin-left: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links { display: none; }
+  
+  .aihero-subtext { font-size: 22px; }
+  .aihero-heading { font-size: 26px; }
+  
+  .aihero-infobox {
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  .aihero-badge {
+    right: 50%;
+    top: -40px;
+    transform: translateX(50%);
+  }
+}
+/* Subtle floating motion */
+@keyframes floatSoft {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-soft {
+  animation: floatSoft 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Gentle breathing zoom */
+@keyframes zoomSoft {
+  0% { transform: scale(1); }
+  50% { transform: scale(10.03); }
+  100% { transform: scale(20); }
+}
+
+.zoom-soft {
+  animation: zoomSoft 10s ease-in-out infinite;
+  will-change: transform;
+}
+/* Once reveal is done — disable transform transitions */
+.reveal-done * {
+  transform: none !important;
+  animation: none !important;
+}
+

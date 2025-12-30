@@ -1,0 +1,124 @@
+.box3-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: #3a3a3a; 
+  align-items: center;
+  color: light;
+  width: 1512px;
+  height: 576px;
+  width: 96%;
+  margin-left: 2%;
+  color: white;
+}
+[data-theme="dark"] .box3-container{
+  background: gainsboro;
+  color: black;
+}
+
+.box3-right {
+  padding: 20px;
+  text-align: left;
+  font-family: raleway;
+}
+
+.box3-right h2 {
+font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 38px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+text-transform: uppercase;
+margin-left: 80px;
+margin-top: -10px;
+}
+
+.box3-right p {
+font-family: Raleway;
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+width: 60%;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+margin-left: 80px;
+}
+.box3-right h4{
+  margin-left: 80px;
+  font-size: 15px;
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+  margin-left: 80px;
+  list-style: none;
+}
+.box3-left img {
+  object-fit:contain;
+  width: 98%;
+  height: 98%;
+}
+@media (max-width:1000px) {
+    .box3-container{
+       padding-left: 0px;
+    } .box3-left img{
+    margin-left: 25px;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .box3-left img{
+    margin-left: 12px;
+  }
+  .box3-container {
+    grid-template-columns: 1fr;  /* stack vertically */
+    height: auto;                /* allow natural height */
+    padding: 20px;               /* reduce padding on small screen */
+    width: 96%;                 /* prevent overflow */
+    padding-left: 0px;
+  }
+
+  .box3-left {
+    text-align: left;            /* left-aligned for readability */
+    margin-left: 2%;
+  }
+
+  .box3-right {
+    margin-top: 20px;            /* spacing between text and image */
+  }
+
+  .box3-right img {
+    width: 100%;                 /* full width */
+    height: 100%;
+    max-width: 400px;            /* limit size for mobile */
+    height: auto;                /* maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .box3-left h3 {
+    font-size: 30px;
+  }
+
+  .box3-right p {
+    font-size: 18px;
+    margin-left: 0;
+    display: none;
+  }
+  .box3-right h2{
+    margin-left: 0;
+  }
+  .box3-right h4{
+    margin-left: 0;
+  }
+  .box3-right ul{
+    margin-left: 0;
+  }
+  .box3-left img{
+    margin-left: 12px;
+  }
+}

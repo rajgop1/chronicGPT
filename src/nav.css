@@ -1,0 +1,118 @@
+:root {
+  --header-height: 72px;
+  --header-padding-x: 60px;
+  --logo-height: 40px;
+  --nav-font-size: 16px;
+}
+
+.nav-container {
+  width: 100%;
+  height: 339px;
+  position: relative;
+  
+}
+
+/* Scroll-controlled header */
+.nav-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: var(--header-height);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0) 35%, rgba(0,0,0,0.7) 90%, rgba(0,0,0,1) 100%),
+    url("./subbanner.png");
+  background-size: cover;
+  background-position: center 25%;
+}
+
+
+/* Header layout */
+.home-header {
+  width: 100%;
+  height: var(--header-height);
+  padding: 5px var(--header-padding-x);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+border-image: linear-gradient(
+  to right,
+  transparent 20%,
+  #ffffffa8 50%,
+  transparent 80%
+) 1;
+}
+
+
+.logo {
+  height: var(--logo-height);
+  width: auto;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-item.item {
+  font-size: var(--nav-font-size);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-weight: 500;
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #a1ffce, #7e4493, #89f7fe, #66a6ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flow 4s linear infinite;
+}
+
+@keyframes flow {
+  from { background-position: 0%; }
+  to { background-position: 300%; }
+}
+
+.hamburger.ham {
+  font-size: 28px;
+  display: none;
+}
+
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 1001;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger.ham { display: block; }
+  .home-header { padding: 0 20px; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger.ham { display: block; }
+}
