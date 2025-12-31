@@ -108,7 +108,7 @@ border-image: linear-gradient(
 
 .hero-inner {
   /* background-color: green; */
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   /* max-width: 1300px; */
   display: grid;
@@ -187,7 +187,105 @@ font-weight: 400;
 /* =========================
    MOBILE RESPONSIVENESS
 ========================= */
-@media (max-width:2000px) {
+@media (max-width:5120px) {  /*25%*/
+  .hero-visual{ 
+    height: 95vh;
+  }
+  .hero-doctor{
+    height: 105%;
+    width: 80%;
+  }
+  .hero-inner{
+    height: 83%;
+  }
+  .hero-text{
+margin-left: 50%;
+  }
+  .ny{
+    font-size: 90px;
+  }
+  .hero-info p{
+    font-size: 55px;
+  }
+  .hero-info .doct{
+    font-size: 40px;
+  }
+}
+
+
+@media (max-width:3840px) {  /*33*/
+  .hero-visual{
+    height: 90vh;
+  }
+  .hero-doctor{
+    height: 105%;
+    width: 80%;
+  }
+  .hero-inner{
+    height: 80%;
+  }
+  .hero-text{
+margin-left: 50%;
+  }
+  .ny{
+    font-size: 70px;
+  }
+  .hero-info p{
+    font-size: 40px;
+  }
+  .hero-info .doct{
+    font-size: 30px;
+  }
+}
+@media (max-width:3440px) {   /*40*/
+  .hero-visual{
+    height: 90vh;
+  }
+  .hero-doctor{
+    height: 105%;
+    width: 80%;
+  }
+  .hero-inner{
+    height: 80%;
+  }
+  .hero-text{
+margin-left: 50%;
+  }
+  .ny{
+    font-size: 55px;
+  }
+  .hero-info p{
+    font-size: 40px;
+  }
+  .hero-info .doct{
+    font-size: 30px;
+  }
+}
+@media (max-width:2560px) {    /*50*/
+  .hero-visual{
+    height: 90vh;
+  }
+  .hero-doctor{
+    height: 105%;
+    width: 80%;
+  }
+  .hero-inner{
+    height: 80%;
+  }
+  .hero-text{
+margin-left: 50%;
+  }
+  .ny{
+    font-size: 50px;
+  }
+  .hero-info p{
+    font-size: 40px;
+  }
+  .hero-info .doct{
+    font-size: 30px;
+  }
+}
+@media (max-width:1920px) {
   .hero-visual{
     height: 85vh;
     /* margin-top: 0px; */
@@ -202,7 +300,19 @@ font-weight: 400;
   .hero-text{
 margin-left: 25%;
   }
+  .ny{
+    font-size: 30px;
+  }
+  .hero-info p{
+    font-size: 16px;
+  }
+  .hero-info .doct{
+    font-size: 14px;
+  }
 }
+
+
+
 
 @media (max-width: 768px) {
   .hamburger { display: block; }

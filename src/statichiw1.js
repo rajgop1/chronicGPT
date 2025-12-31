@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react";
-import "./statichiw.css";
-import trustImg from "./image 1587.jpg";
-import Try from "./try";
+import "./statichiw1.css";
 import { useState } from "react";
-import Sample from "./Sample";
+import home from "./Home.png";
 
-function Statichiw() {
+
+function Statichiw1() {
   const scrollRef = useRef(null);
   const stageRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -99,14 +98,31 @@ progress = Math.max(0, Math.min(1, progress));
     };
   }, []);
   return (
-    <section className="sg-stages" ref={stageRef}>
-      <section className="sg-wrapper" ref={wrapperRef}>
+    <section className="sg-stages sg-stage" ref={stageRef}>
+      <section className="sg-wrapper sg-wrap" ref={wrapperRef}>
         <div className="sg-scroll" ref={scrollRef}>
-         <Sample/>
+            <div className="trust-panel">
+  <div className="trust-image-wrapper">
+    <img className="home" src={home} alt="Trust visual" />
+  </div>
+
+  <div className="trust-text">
+    <h2>Built for Trust</h2>
+    <p>
+      We know you can only trust a system that is medically sound, transparent, and accountable.
+      ChronicGPT is built so that your AI Doctor never acts alone.
+    </p>
+    <p className="trust-small">
+      Clinical Oversight: Physicians review your clinical trace and intervene whenever needed.<br />
+      Transparent Decisions: You always see why something is recommended — no black boxes.<br />
+      Your Data Stays Yours: Fully encrypted, never sold, never shared.
+    </p>
+  </div>
+</div>
         </div>
       </section>
     </section>
   );
 }
 
-export default Statichiw;
+export default Statichiw1;

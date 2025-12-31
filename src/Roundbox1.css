@@ -3,7 +3,7 @@
 ================================ */
 
 .stack-stag {
-  height: 500vh;
+  height: 300vh;
   position: relative;
   z-index: 10001;
 }
@@ -20,6 +20,13 @@
   box-shadow: 0 30px 80px rgba(0,0,0,0.12);
   z-index: 10;
   will-change: transform;
+}
+.stack-wrappe.freeze {
+  position: fixed;
+  top: 20vh;
+  left: 1%;
+  width: 98%;
+  z-index: 99999;
 }
 
 .stack-wrappe.stuck .stack-scrol {

@@ -1,48 +1,77 @@
 .sample-boxes {
-  /* min-height: 300vh; */
-  /* perspective: 1200px; */
+  min-height: 600vh;  /* 👈 gives enough scroll space for all 6 sticky cards */
+  position: relative; /* important for absolute children */
 }
 
 .box {
-  margin-bottom: 40px;
+  margin-bottom: 15vh;
   width: 85%;
-  height: 500px;
-  border: 2px solid black;
+  height: 52vh;
+  border: 1px solid rgba(0, 0, 0, 0.479);
   border-radius: 30px;
-  box-shadow: 2px 0px 20px rgba(55, 55, 55, 0.621);
   position: absolute;
   left: 8%;
   display: flex;
-  /* overflow: hidden; */
-  /* transform-style: preserve-3d;
-  transition: transform 0.6s ease, opacity 0.6s ease; */
+  padding: 0;
 }
 
 .sample-left {
-  width: 40%;
+  width: 50%;
   padding: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 35%;
   font-size: 20px;
+}
+.sample-left-small{
+  display: flex;
+  margin-top: -30px;
+  align-items: center;
+  margin-left: -6%;
+}
+.desc{
+  color: #121212;
+font-family: Raleway;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
 }
 
 .sample-right {
-  width: 60%;
+  width: 50%;
   display: flex;
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
 }
 
 .sample-right img {
-  width: 96%;
+  width: 90%;
   height: 80%;
 }
 
 /* Sticky positions */
-.box1 { background-color: white; z-index: 1; position: sticky; top: 10px; }
-.box2 { background-color: white; z-index: 2; position: sticky; top: 40px; }
-.box3 { background-color: white; z-index: 3; position: sticky; top: 70px; }
-.box4 { background-color: white; z-index: 4; position: sticky; top: 100px; }
-.box5 { background-color: white; z-index: 5; position: sticky; top: 130px; }
-.box6 { background-color: white; z-index: 6; position: sticky; top: 160px; }
+.box1 { background-color: white; z-index: 1; position: sticky; top:22vh; }
+.box2 { background-color: white; z-index: 2; position: sticky; top: 23vh; }
+.box3 { background-color: white; z-index: 3; position: sticky; top: 24vh; }
+.box4 { background-color: white; z-index: 4; position: sticky; top: 25vh; }
+.box5 { background-color: white; z-index: 5; position: sticky; top: 26vh; }
+.box6 { background-color: white; z-index: 6; position: sticky; top: 27vh; }
 
+.sample-title-wrapper {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  /* margin-bottom: 40px; */
+  background: #F1F1F1;
+}
+.sg-header p{
+width: 40%;
+color: #121212;
+font-family: Raleway;
+font-size: 15px;
+font-weight: 500;
+}
+.sg-header{
+  align-items: center;
+}

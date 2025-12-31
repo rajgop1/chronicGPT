@@ -80,6 +80,9 @@ border-image: linear-gradient(
 
 
 /* MOBILE */
+@media (max-width:5120px) {
+  
+}
 @media (max-width: 768px) {
   .hamburger { display: block; }
   .nav-links { display: none; }
@@ -132,4 +135,58 @@ border-image: linear-gradient(
 @media (max-width: 768px) {
   .hamburger { display: block; }
   .nav-links { display: none; }
+}
+
+/* =========================
+   LARGE SCREEN SCALING
+========================= */
+
+/* ≥ 1920px (Large desktop) */
+@media (min-width: 1920px) {
+  :root {
+    --header-height: 80px;
+    --header-padding-x: 80px;
+    --logo-height: 48px;
+    --nav-font-size: 18px;
+  }
+}
+
+/* ≥ 2560px (QHD / big monitors) */
+@media (min-width: 2560px) {
+  :root {
+    --header-height: 90px;
+    --header-padding-x: 100px;
+    --logo-height: 56px;
+    --nav-font-size: 20px;
+  }
+}
+
+/* ≥ 3440px (Ultrawide) */
+@media (min-width: 3440px) {
+  :root {
+    --header-height: 100px;
+    --header-padding-x: 120px;
+    --logo-height: 64px;
+    --nav-font-size: 22px;
+  }
+}
+
+/* ≥ 3840px (4K) */
+@media (min-width: 3840px) {
+  :root {
+    --header-height: 115px;
+    --header-padding-x: 140px;
+    --logo-height: 72px;
+    --nav-font-size: 24px;
+  }
+}
+
+/* ≥ 5120px (5K) */
+@media (min-width: 5120px) {
+  :root {
+    --header-height: 130px;
+    --header-padding-x: 180px;
+    --logo-height: 80px;
+    --nav-font-size: 26px;
+  }
 }

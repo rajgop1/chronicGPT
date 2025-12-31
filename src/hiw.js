@@ -8,24 +8,7 @@ import TimedReveal from "./TimedReveal";
 export default function Hiw() {
   const [activeIndex, setActiveIndex] = useState(0);
   const wrapperRef = useRef(null);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (!wrapperRef.current) return;
-      const rect = wrapperRef.current.getBoundingClientRect();
-      const scrollThreshold = rect.height / 3;
-      
-      // Calculate index based on how far we've scrolled through the 250vh wrapper
-      const scrolled = -rect.top;
-      let index = Math.floor(scrolled / (rect.height / 3.2)); // Slight offset for smoother transition
-      index = Math.max(0, Math.min(index, 2));
-      setActiveIndex(index);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const manualChangeRef = useRef(false);
 
   const steps = [
     {
@@ -43,28 +26,43 @@ export default function Hiw() {
     {
       num: "03",
       title: "Clear explanations. Simple actions. No jargon.",
-      desc: "Your AI Doctor turns complex data into practical daily guidance:“Your numbers look stable — keep the same routine today.” “Take a lighter dinner tonight; your glucose stayed elevated longer than usual.” “Focus on hydration for the next 24 hours — it will help bring your pressure down.” Every message is personalized, medically grounded, and aimed at keeping you steady, confident, and in control.",
+      desc: "Your AI Doctor turns complex data into practical daily guidance: “Your numbers look stable — keep the same routine today.” “Take a lighter dinner tonight; your glucose stayed elevated longer than usual.” “Focus on hydration for the next 24 hours — it will help bring your pressure down.” Every message is personalized, medically grounded, and aimed at keeping you steady, confident, and in control.",
       icon: doct3,
     },
-  ];const scrollToStep = (index) => {
-  if (!wrapperRef.current) return;
+  ];
 
-  const wrapper = wrapperRef.current;
-  const sectionHeight = wrapper.offsetHeight / steps.length;
+  useEffect(() => {
+    const onScroll = () => {
+      if (!wrapperRef.current || manualChangeRef.current) return;
 
-  window.scrollTo({
-    top: wrapper.offsetTop + index * sectionHeight,
-    behavior: "smooth",
-  });
+      const rect = wrapperRef.current.getBoundingClientRect();
+      const scrolled = -rect.top;
 
-  setActiveIndex(index);
-};
+      let index = Math.floor(scrolled / (rect.height / 3.2));
+      index = Math.max(0, Math.min(index, steps.length - 1));
 
+      setActiveIndex(index);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [steps.length]);
+
+  const handleProgressClick = (index) => {
+    manualChangeRef.current = true;
+    setActiveIndex(index);
+
+    setTimeout(() => {
+      manualChangeRef.current = false;
+    }, 700);
+  };
 
   return (
     <section className="hiw-wrapper" ref={wrapperRef}>
       <div className="hiw-container">
-        {/* Left Side: Header and Progress */}
+        {/* LEFT COLUMN */}
         <div className="hiw-lft-column">
           <div className="hiw-heade">
             <h2>How it works</h2>
@@ -79,34 +77,39 @@ export default function Hiw() {
           <div className="hiw-progress-section">
             <div className="progress-text">
               <span className="current">0{activeIndex + 1}</span>
-              <span className="total">/03</span>
+              <span className="total">/0{steps.length}</span>
             </div>
-            <div className="progress-lines">
-  {steps.map((_, i) => (
-    <div
-      key={i}
-      className={`progress-line ${activeIndex === i ? "active" : ""}`}
-      onClick={() => scrollToStep(i)}
-    />
-  ))}
-</div>
 
+            <div className="progress-lines">
+              {steps.map((_, i) => (
+                <div
+                  key={i}
+                  className={`progress-line ${
+                    activeIndex === i ? "active" : ""
+                  }`}
+                  onClick={() => handleProgressClick(i)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Right Side: Sliding Cards */}
+        {/* RIGHT COLUMN */}
         <div className="hiw-rgt-column">
           <div className="cards-viewport">
             {steps.map((step, i) => (
               <div
                 key={i}
-                className={`hiw-card ${activeIndex === i ? "active" : ""} ${i < activeIndex ? "prev" : ""}`}
-               style={{
-  transform: `translateY(calc(${(i - activeIndex) * 100}% + ${(i - activeIndex) * 25}px))`,
-  opacity: i === activeIndex ? 1 : 0.4,
-  zIndex: steps.length - i
-}}
-
+                className={`hiw-card ${
+                  activeIndex === i ? "active" : ""
+                } ${i < activeIndex ? "prev" : ""}`}
+                style={{
+                  transform: `translateY(calc(${(i - activeIndex) * 100}% + ${
+                    (i - activeIndex) * 25
+                  }px))`,
+                  opacity: i === activeIndex ? 1 : 0.4,
+                  zIndex: steps.length - i,
+                }}
               >
                 <div className="card-image">
                   <img src={step.icon} alt={step.title} />

@@ -59,11 +59,12 @@ useEffect(() => {
         {/* <NavLink style={{color:"white"}} to="/" end className="nav-item"><span className="gradient-text">✦</span> Home</NavLink> */}
         <NavLink style={{color:"white"}} className="nav-item">
   <span className="nav-icon gradient-text">✦</span>
-  <span className="nav-text">Home</span>
+  <span className="nav-text" style={{fontWeight:"700"}}>Home</span>
 </NavLink>
 
         <NavLink style={{color:"white"}} to="/trust" className="nav-item">Safeguards</NavLink>
-        <NavLink style={{color:"white"}} to="/journey" className="nav-item">How it works</NavLink>
+        <NavLink style={{color:"white"}} to="/journey" className="nav-item">Journey</NavLink>
+         <NavLink style={{color:"white"}} to="/journey" className="nav-item">How it works</NavLink>
       </nav>
 
       {menuOpen && (

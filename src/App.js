@@ -39,7 +39,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/trust" element={<Trust />} />
         <Route path="/journey" element={<Journey />} />
-        <Route path="/sample" element={<Box10/>}/>
+        <Route path="/sample" element={<Sample/>}/>
       </Routes>
     </Router>
   );

@@ -15,6 +15,7 @@ import Absoluteheader from "./absoluteheader";
 import Statichiw from "./statichiw";
 import Roundbox from "./Roundbox";
 import Roundbox1 from "./Roundbox1";
+import Roundbox2 from "./Roundbox2";
 
 
 function Home() {
@@ -32,9 +33,10 @@ function Home() {
         <Navigation />
         <Roundbox/>
         <Roundbox1/>
+        <Roundbox2/>
       {/* <Box10/> */}
-      <Playstores/>
-      <Footer/>
+      {/* <Playstores/> */}
+      {/* <Footer/> */}
     </div>
 
   );

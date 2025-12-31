@@ -1,16 +1,16 @@
-import "./Roundbox1.css";
+import "./Roundbox2.css";
 import { useEffect, useRef } from "react";
-import Box10 from "./box10";
+import Playstores from "./playstore";
+import Footer from "./footer";
 
-function Roundbox1({ z = 100001 }) {
+function Roundbox2({ z = 100002 }) {
   const scrollRef = useRef(null);
   const stageRef = useRef(null);
   const wrapperRef = useRef(null);
 
-  const requestRef = useRef();
+  const requestRef = useRef(null);
   const targetScroll = useRef(0);
   const currentScroll = useRef(0);
-  const currentTranslate = useRef(window.innerHeight * 0.7);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -25,41 +25,13 @@ function Roundbox1({ z = 100001 }) {
       const stageRect = stage.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // ============================
-      // FREEZE FOR NEXT 500vh ONLY
-      // ============================
-    // ============================
-// FREEZE FOREVER AFTER STAGE
-// ============================
-// ============================
-// FREEZE FOREVER AFTER STAGE
-// ============================
-const passedStage = viewportHeight - stageRect.bottom;
-
-if (passedStage > 0) {
-  wrapper.classList.add("freeze");
-}
-
-      // ENTRY MOTION
-      const entryStart = viewportHeight;
-      const entryEnd = stickyTopPx;
-
-      let entryProgress = (stageRect.top - entryEnd) / (entryStart - entryEnd);
-      entryProgress = Math.max(0, Math.min(1, entryProgress));
-
-      const targetT = entryProgress * viewportHeight;
-      currentTranslate.current += (targetT - currentTranslate.current) * lerp;
-      wrapper.style.transform = `translateY(${currentTranslate.current}px)`;
-
-      // STICKY CHECK
-      const isSticky = stageRect.top <= stickyTopPx - 20;
+      const isSticky = stageRect.top <= stickyTopPx;
 
       if (isSticky) {
         wrapper.classList.add("stuck");
 
         const totalScrollArea = stageRect.height - viewportHeight;
         const scrollMoved = -(stageRect.top - stickyTopPx);
-
         let internalProgress =
           scrollMoved / (totalScrollArea - (viewportHeight - stickyTopPx));
         internalProgress = Math.max(0, Math.min(1, internalProgress));
@@ -73,7 +45,8 @@ if (passedStage > 0) {
         targetScroll.current = 0;
       }
 
-      currentScroll.current += (targetScroll.current - currentScroll.current) * lerp;
+      currentScroll.current +=
+        (targetScroll.current - currentScroll.current) * lerp;
       scrollContainer.scrollTop = currentScroll.current;
 
       requestRef.current = requestAnimationFrame(smoothScroll);
@@ -83,16 +56,16 @@ if (passedStage > 0) {
     return () => cancelAnimationFrame(requestRef.current);
   }, []);
 
-
   return (
-    <section className="stack-stag" ref={stageRef} style={{ zIndex: z }}>
-      <section className="stack-wrappe" ref={wrapperRef}>
-        <div className="stack-scrol" ref={scrollRef}>
-          <Box10 />
+    <section className="stack-sta" ref={stageRef} style={{ zIndex: z }}>
+      <section className="stack-wrapp" ref={wrapperRef}>
+        <div className="stack-scro" ref={scrollRef}>
+          <Playstores/>
+          <Footer/>
         </div>
       </section>
     </section>
   );
 }
 
-export default Roundbox1;
+export default Roundbox2;

@@ -6,9 +6,9 @@ import AID from "./ban3.png";
 import ScrollReveal from "./ScrollReveal";
 import TimedReveal from "./TimedReveal";
 import Reactange from "./Rectangle.png";
-import removedai from "./removedai.png";
-import removedyou from "./removedyou.png";
-import removedmd from "./removedmd.png";
+import removedai from "./Group1.png";
+import removedyou from "./grouped.png";
+import removedmd from "./Group3.png";
 import mdban from "./mdban.png";
 
 function Navigation() {
@@ -50,7 +50,7 @@ function Navigation() {
   }
 
   // PHASE 2 — zoom + reveal
-  else if (scrolled <= 3.5 * vh) {
+  else if (scrolled <= 3 * vh) {
     const zoomProgress = (scrolled - 1 * vh) / (2.5 * vh);
     style.height = "100vh";
     style.top = "0";
@@ -61,12 +61,12 @@ function Navigation() {
   }
 
   // PHASE 3 — stable
- else if (scrolled <= 10.9 * vh) {
+ else if (scrolled <= 9.4 * vh) {
   style.height = "100vh";
   paragraphVisible = false;
   style.top = "0";
   style.scale = 1;
-  style.backgroundPositionY = "90%";
+  style.backgroundPositionY = "100%";
   //  style.gradTop = "50%";
 }
 
@@ -118,16 +118,16 @@ function Navigation() {
       {showParagraph && (
   <>
     <ScrollReveal className="md float-soft">
-      <img src={removedmd}  />
+      {/* <img src={removedmd}  /> */}
       
     </ScrollReveal>
 
     <ScrollReveal className="aid float-soft" >
-      <img src={removedai} />
+      {/* <img src={removedai} /> */}
     </ScrollReveal>
 
     <ScrollReveal className="you float-soft">
-      <img src={removedyou}  />
+      {/* <img src={removedyou}  /> */}
     </ScrollReveal>
   </>
 )}
