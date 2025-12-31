@@ -8,16 +8,18 @@ import Footer from "./footer";
 import BlankBox from "./Blank";
 import Roundbox from "./Roundbox";
 
-function Trust(){
-    
+function Trust() {
+
     return (
-        <div className="trust-container">
-        <Nav starOn="trust" />
-        {/* <Roundbox/> */}
-         <Statichiw/>
-         <Statichiw1/>
-         {/* <BlankBox/> */}
-         <Footer/>
+        <div style={{ background: "#121212" }} className="trust-container">
+            <div style={{ maxWidth: "1512px", margin: "auto" }}>
+                <Nav starOn="trust" />
+                {/* <Roundbox/> */}
+                <Statichiw />
+                <Statichiw1 />
+                {/* <BlankBox/> */}
+                <Footer />
+            </div>
         </div>
     );
 }

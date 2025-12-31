@@ -25,7 +25,8 @@ function Home() {
   // }
   return (
     
-    <div className="home-container">
+    <div className="home-container" style={{background: "#121212"}}>
+      <div style={{ maxWidth: "1512px", margin: "auto"}}>
         <Header/>
         {/* <Hero/> */}
         {/* <Absoluteheader/> */}
@@ -37,6 +38,7 @@ function Home() {
       {/* <Box10/> */}
       {/* <Playstores/> */}
       {/* <Footer/> */}
+      </div>
     </div>
 
   );

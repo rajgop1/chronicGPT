@@ -11,35 +11,36 @@ import Box10 from "./box10";
 
 function App() {
   useEffect(() => {
-  const lenis = new Lenis({
-    duration: 1.6,
-    easing: (t) => 1 - Math.pow(1 - t, 3.5),
-    smoothWheel: true,
-    smoothTouch: false,
-  });
+    const lenis = new Lenis({
+      duration: 1.9,
+      easing: (t) => 1 - Math.pow(1 - t, 3.5),
+      smoothWheel: true,
+      smoothTouch: false,
+      wheelMultiplier: 2.5,
+    });
 
-  let rafId;
-  const raf = (time) => {
-    lenis.raf(time);
+    let rafId;
+    const raf = (time) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
     rafId = requestAnimationFrame(raf);
-  };
-  rafId = requestAnimationFrame(raf);
 
-  return () => {
-    cancelAnimationFrame(rafId);
-    lenis.destroy();
-  };
-}, []);
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
 
   return (
     <Router>
-      <ScrollToTop /> 
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trust" element={<Trust />} />
         <Route path="/journey" element={<Journey />} />
-        <Route path="/sample" element={<Sample/>}/>
+        <Route path="/sample" element={<Sample />} />
       </Routes>
     </Router>
   );

@@ -1,12 +1,13 @@
 .sample-boxes {
-  min-height: 600vh;  /* 👈 gives enough scroll space for all 6 sticky cards */
-  position: relative; /* important for absolute children */
+  min-height: 600vh;
+  /* 👈 gives enough scroll space for all 6 sticky cards */
+  position: relative;
+  /* important for absolute children */
 }
 
 .box {
-  margin-bottom: 15vh;
+  margin-bottom: 200px;
   width: 85%;
-  height: 52vh;
   border: 1px solid rgba(0, 0, 0, 0.479);
   border-radius: 30px;
   position: absolute;
@@ -17,46 +18,77 @@
 
 .sample-left {
   width: 50%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 35%;
+  justify-content: space-between;
   font-size: 20px;
 }
-.sample-left-small{
+
+.sample-left-small {
   display: flex;
-  margin-top: -30px;
   align-items: center;
-  margin-left: -6%;
 }
-.desc{
+
+.desc {
   color: #121212;
-font-family: Raleway;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .sample-right {
   width: 50%;
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  align-items: center;
+  /* vertical center */
+  justify-content: center;
+  /* horizontal center */
 }
 
-.sample-right img {
-  width: 90%;
-  height: 80%;
-}
 
 /* Sticky positions */
-.box1 { background-color: white; z-index: 1; position: sticky; top:22vh; }
-.box2 { background-color: white; z-index: 2; position: sticky; top: 23vh; }
-.box3 { background-color: white; z-index: 3; position: sticky; top: 24vh; }
-.box4 { background-color: white; z-index: 4; position: sticky; top: 25vh; }
-.box5 { background-color: white; z-index: 5; position: sticky; top: 26vh; }
-.box6 { background-color: white; z-index: 6; position: sticky; top: 27vh; }
+.box1 {
+  background-color: white;
+  z-index: 1;
+  position: sticky;
+  top: 22vh;
+}
+
+.box2 {
+  background-color: white;
+  z-index: 2;
+  position: sticky;
+  top: 23vh;
+}
+
+.box3 {
+  background-color: white;
+  z-index: 3;
+  position: sticky;
+  top: 24vh;
+}
+
+.box4 {
+  background-color: white;
+  z-index: 4;
+  position: sticky;
+  top: 25vh;
+}
+
+.box5 {
+  background-color: white;
+  z-index: 5;
+  position: sticky;
+  top: 26vh;
+}
+
+.box6 {
+  background-color: white;
+  z-index: 6;
+  position: sticky;
+  top: 27vh;
+}
 
 .sample-title-wrapper {
   position: sticky;
@@ -65,13 +97,15 @@ font-weight: 400;
   /* margin-bottom: 40px; */
   background: #F1F1F1;
 }
-.sg-header p{
-width: 40%;
-color: #121212;
-font-family: Raleway;
-font-size: 15px;
-font-weight: 500;
+
+.sg-header p {
+  width: 40%;
+  color: #121212;
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
 }
-.sg-header{
+
+.sg-header {
   align-items: center;
 }

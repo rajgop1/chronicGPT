@@ -18,7 +18,7 @@ function Nav({ starOn = [] }) {
     };
 
     const handleScroll = () => {
-      const minHeight = window.innerHeight * 0.22; // 👈 20vh
+      const minHeight = 72; 
       const scrollY = window.scrollY;
       const progress = Math.min(scrollY / shrinkDistance, 1);
       const newHeight = maxHeight - (maxHeight - minHeight) * progress;

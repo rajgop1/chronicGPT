@@ -42,32 +42,36 @@ function FirstNav() {
   }, []);
 
   return (
-    <div className={`fnav-container ${revealed ? "reveal-done" : ""}`}>
-      <div className="divline" />
-
-      <div className="hero-inner">
-        <TimedReveal
-          className="hero-text"
-          delay={100}
-        >
-          <RotatingHeadline className="rh" />
-        </TimedReveal>
-
-        <div className="hero-visual">
-          <img src={doctor} alt="Doctor" className="hero-doctor" />
-
-          <TimedReveal delay={300} className="hero-info float-soft" variant="zoom">
-            <div>
-              <p>Dr Sara Mohan</p>
-              <p className="doct">Your AI Doctor</p>
-            </div>
+    <div className={`fnav-container ${revealed ? "reveal-done" : ""}`} style={{ paddingInline: "100px", paddingTop: "40px" }}>
+      <div className="hero-inner" style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div >
+          <TimedReveal
+            className="hero-text"
+            delay={100}
+          >
+            <RotatingHeadline className="rh" />
           </TimedReveal>
         </div>
+
+        <div className="hero-visual" style={{ position: "relative" }}>
+          <div style={{ width: "594px" }}>
+            <img src={doctor} alt="Doctor" style={{ margin: "-5px", height: "100%", width: "100%", objectFit: "cover" }} />
+          </div>
+          <div className="info-card" style={{ position: "absolute", top: "35%", right: "50px" }}>
+            <TimedReveal delay={300} className="hero-info float-soft" variant="zoom">
+              <div>
+                <p> Dr. Sara Mohan</p>
+                <p className="doct" >Your AI Doctor</p>
+              </div>
+            </TimedReveal>
+          </div>
+        </div>
+
       </div>
 
       <TimedReveal delay={500}>
         <p className="ny">
-        Now you can have your own AI Doctor that is always on, always <br/>yours, and outcome focused
+          Now you can have your own AI Doctor that is always on, always <br />yours, and outcome focused
         </p>
       </TimedReveal>
     </div>

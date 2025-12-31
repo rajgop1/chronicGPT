@@ -67,7 +67,7 @@ function Statichiw() {
         // Still in the 2s waiting period
         targetScroll.current = 0;
         // Keep updating where the scroll "should" start from until 2s is up
-        scrollStartPos.current = window.scrollY; 
+        scrollStartPos.current = window.scrollY;
         return;
       }
 
@@ -76,14 +76,14 @@ function Statichiw() {
       // SINCE the 2-second timer ended.
       const currentPageY = window.scrollY;
       const distanceScrolledSinceTimerEnded = currentPageY - scrollStartPos.current;
-      
+
       // Calculate how much runway is left in the stage
       // (Stage Bottom - Sticky Box Height - Current Scroll Pos)
       const totalTravelDistance = stageRect.height - wrapperRect.height - (scrollStartPos.current - (window.scrollY + stageRect.top));
-      
-     const travel = stageRect.height - wrapperRect.height;
-let progress = travel > 0 ? distanceScrolledSinceTimerEnded / travel : 0;
-progress = Math.max(0, Math.min(1, progress));
+
+      const travel = stageRect.height - wrapperRect.height;
+      let progress = travel > 0 ? distanceScrolledSinceTimerEnded / travel : 0;
+      progress = Math.max(0, Math.min(1, progress));
 
 
       const maxInternalScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
@@ -100,9 +100,9 @@ progress = Math.max(0, Math.min(1, progress));
   }, []);
   return (
     <section className="sg-stages" ref={stageRef}>
-      <section className="sg-wrapper" ref={wrapperRef}>
+      <section className="sg-wrapper" ref={wrapperRef} style={{top: "92px"}}>
         <div className="sg-scroll" ref={scrollRef}>
-         <Sample/>
+          <Sample />
         </div>
       </section>
     </section>
